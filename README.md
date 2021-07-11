@@ -71,7 +71,7 @@ Simple Dapp Tool for NFT and data Deployment using only NEO wallet for interacti
 Pay for everything in GAS not platform tokens.
 
 Opensourcing NEO3 node plugins and OpenAPI that helps others to interact with Blockchain.
-Smart contract compiler - Deploy Smart contractfrom Temaplate and add user input data on the fly.
+Smart contract compiler - Deploy Smart contract from Temaplate and add user input data on the fly.
 
 
 ## What is the proposed revenue model?
@@ -89,18 +89,23 @@ Examples of fees:
 
 ## Project components
 
-
 ### Smart contract
 
 NFT smart contract followed NEP-11 and ERC-721
 
 ### Blockchain data access layer
 
-Plugins for NEO node - 
+![Alt text](https://github.com/Team11-Latvia/tantalis-neo3-nft-and-data-dapp/blob/master/media/graph-1.png)
 
-OpenAPI - 
+Plugins for NEO node - Additional Features for interatin with NEO3 node as installable plugins
 
-Smart contract Compiler API - 
+OpenAPI - Additional Features for interatin with NEO3 node
+
+Smart contract Compiler API - Deploy NFT smart contract by filling all information from user input to smart contract and then on the fly Compile it and generate ABI code and then let user sign it.
+
+
+![Alt text](https://github.com/Team11-Latvia/tantalis-neo3-nft-and-data-dapp/blob/master/media/graph-2.png)
+
 
 ### UI portal
 
@@ -123,7 +128,6 @@ Use existing NEO browser plugin wallet - NeoLine
 - Integrate Stable coin usage to sell items in USD
 - Integrate other blockchains for payment methods, use dex for exchanging
 
-
 ## Technology used
 
 - Front - Angular.js
@@ -142,4 +146,8 @@ Use existing NEO browser plugin wallet - NeoLine
 
 ## Accomplishments that we're proud of
 
+One Click Deploy of NFT Smart contract from browser
+
 ## What we learned
+
+
