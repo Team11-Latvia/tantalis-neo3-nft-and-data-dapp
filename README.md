@@ -95,7 +95,7 @@ NFT smart contract followed NEP-11 and ERC-721
 
 ### Blockchain data access layer
 
-![Alt text](https://github.com/Team11-Latvia/tantalis-neo3-nft-and-data-dapp/blob/master/media/graph-1.png)
+![Alt text](https://github.com/Team11-Latvia/tantalis-neo3-nft-and-data-dapp/blob/master/media/graph-1.jpg)
 
 Plugins for NEO node - Additional Features for interatin with NEO3 node as installable plugins
 
@@ -104,7 +104,7 @@ OpenAPI - Additional Features for interatin with NEO3 node
 Smart contract Compiler API - Deploy NFT smart contract by filling all information from user input to smart contract and then on the fly Compile it and generate ABI code and then let user sign it.
 
 
-![Alt text](https://github.com/Team11-Latvia/tantalis-neo3-nft-and-data-dapp/blob/master/media/graph-2.png)
+![Alt text](https://github.com/Team11-Latvia/tantalis-neo3-nft-and-data-dapp/blob/master/media/graph-2.jpg)
 
 
 ### UI portal
