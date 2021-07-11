@@ -1,18 +1,3 @@
-## Inspiration
-
-## What it does
-
-## How we built it
-
-## Challenges we ran into
-
-## Accomplishments that we're proud of
-
-## What we learned
-
-
-
-
 
 
 
@@ -25,6 +10,8 @@
 NEO platform needs their own NFT and data paltform where payments are in GAS, not custom tokens, to fuel usage of NEO economy.
 
 Tantalis is one stop Dapp to NFT Creation and publishing. 
+
+![Alt text](https://github.com/Team11-Latvia/tantalis-neo3-nft-and-data-dapp/blob/master/media/screen-1.png)
 
 
 ## NFT 
@@ -144,3 +131,16 @@ Use existing NEO browser plugin wallet - NeoLine
 - Backend - Node.js/Typescript
 - Blockchain backend - .Net
 - Deployment method - Docker with Automated Gitlab pipeline build
+
+
+## Inspiration
+
+## What it does
+
+## How we built it
+
+## Challenges we ran into
+
+## Accomplishments that we're proud of
+
+## What we learned
