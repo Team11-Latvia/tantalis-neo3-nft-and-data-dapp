@@ -10,6 +10,7 @@
 NEO platform needs their own NFT and data paltform where payments are in GAS, not custom tokens, to fuel usage of NEO economy.
 
 Tantalis is one stop Dapp for Digital data NFT Creation, Discovery and Marketplace.
+
 Also you can upload your data to decentralized storage and sell it to marketplace.
 
 ![Alt text](https://github.com/Team11-Latvia/tantalis-neo3-nft-and-data-dapp/blob/master/media/screen-1.png)
