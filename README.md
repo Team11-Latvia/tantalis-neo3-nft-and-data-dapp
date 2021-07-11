@@ -9,7 +9,8 @@
 
 NEO platform needs their own NFT and data paltform where payments are in GAS, not custom tokens, to fuel usage of NEO economy.
 
-Tantalis is one stop Dapp to NFT Creation and publishing. 
+Tantalis is one stop Dapp for Digital data NFT Creation, Discovery and Marketplace.
+Also you can upload your data to decentralized storage and sell it to marketplace.
 
 ![Alt text](https://github.com/Team11-Latvia/tantalis-neo3-nft-and-data-dapp/blob/master/media/screen-1.png)
 
@@ -25,18 +26,18 @@ Features:
 
 ### Full NFT smart contract deploy
 
-Deploy full your own NFT smart contract. Platform will take care of blockchain side, you only need browser and your digital asset.
+Deploy full your own NFT smart contract. Platform will take care of blockchain side, you only need browser and your digital wallet
 
 
 ### Mint NFT to your previouly added NFT smart contract 
 
-You alredy have NFT smart contract deployed, you can use Tantalis platform to mint new NFT inside your smart contract from browser by using neoline wallet.
+You alredy have NFT smart contract deployed, you can use Tantalis platform to mint new NFT inside your smart contract from browser by using neoline wallet to interct with blockchain
 
 
-### Public NFT smart contract
+### Public NFT smart contract, Cheapest method
 
 Cost of single Smart contract deployment is high, thats why Tantalis platform offers reuse already deployed smart contract.
-That is different from private NFT
+Just use our Smart Contract and just pay smaller fee for Minting your NFT
 
 
 ## DATA Market
@@ -59,17 +60,15 @@ Data explorer picture
 Buy and sell Data objects
 
 
-
 ## What is your project’s concept and how is it designed to succeed or differentiate itself in the market?
 
-
+Full feature service, choose one from 3 methods of NFT deployment and platform will do eeverything for you.
 
 
 ## What is your project’s value proposition?
 
 Simple Dapp Tool for NFT and data Deployment using only NEO wallet for interaction. 
 Pay for everything in GAS not platform tokens.
-
 
 Opensourcing NEO3 node plugins and OpenAPI that helps others to interact with Blockchain.
 Smart contract compiler - Deploy Smart contractfrom Temaplate and add user input data on the fly.
@@ -80,6 +79,7 @@ Smart contract compiler - Deploy Smart contractfrom Temaplate and add user input
 Income streams:
 - Add NFT to Tantalis platform deployed smart contract (Public NFT smart contract)
 - Private Data object Selling fee
+- NFT marketplace fees
 
 Examples of fees:
 - 1% fee for selling digital data 
@@ -94,14 +94,13 @@ Examples of fees:
 
 NFT smart contract followed NEP-11 and ERC-721
 
-
 ### Blockchain data access layer
 
-Plugins for NEO node
+Plugins for NEO node - 
 
-OpenAPI
+OpenAPI - 
 
-
+Smart contract Compiler API - 
 
 ### UI portal
 
@@ -110,11 +109,11 @@ Beutifully built Angular.js web application
 Picture of Figma layout
 Picture of Figma design
 
-
 ### Wallet
 
 Use existing NEO browser plugin wallet - NeoLine
 
+![Alt text](https://github.com/Team11-Latvia/tantalis-neo3-nft-and-data-dapp/blob/master/media/screen-3.png)
 
 ## Future plans
 
