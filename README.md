@@ -18,7 +18,7 @@
 
 # Tantalis - NFT and Data marketplace
 
-![Alt text](https://portal.nft.teamxi.cloud/assets/logos/logo.svg)
+![Alt text](https://github.com/Team11-Latvia/tantalis-neo3-nft-and-data-dapp/blob/master/media/logo.svg)
 
 ## What is Tantalis?
 
