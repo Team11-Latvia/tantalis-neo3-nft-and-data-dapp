@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<svg height="256" width="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #08c435;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <g data-name="neo neocoin" id="neo_neocoin">
+    <g data-name="neo neocoin" id="neo_neocoin-2">
+      <circle class="cls-1" cx="128" cy="128" data-name="Эллипс 17" id="Эллипс_17" r="128"/>
+      <path class="cls-2" d="M1080,1349.89l50.92,24.07V1473L1080,1448.93v-99.04Zm2.06-2.07,50.24,23.39,74.32-26.14L1155.7,1321Zm125.94-.68-52.99,19.25v55.71l52.99,24.76v-99.72Z" data-name="Фигура 13" id="Фигура_13" transform="translate(-1016 -1269)"/>
+    </g>
+  </g>
+</svg>

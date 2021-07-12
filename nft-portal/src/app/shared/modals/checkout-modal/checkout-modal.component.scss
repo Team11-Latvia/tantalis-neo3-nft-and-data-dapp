@@ -1,0 +1,67 @@
+.container-fluid {
+    .close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        mat-icon {
+            cursor: pointer;
+        }
+    }
+    .nft-image {
+        width: 80px;
+        height: 80px;
+        border-radius: 5px;
+    }
+    mat-checkbox {
+        ::ng-deep {
+            .mat-checkbox-label {
+                font-size: 16px !important;
+                h5 {
+                    line-height: 24px !important;
+                }
+            }
+            .mat-checkbox-frame {
+                width: 24px;
+                height: 24px;
+                border-radius: 4px;
+            }
+        }
+        
+        ::ng-deep.mat-checkbox-layout{
+            white-space: normal !important;
+        }
+            
+        ::ng-deep.mat-checkbox-inner-container{
+            width: 24px;
+            height: 24px;
+            margin-top: 4px;
+            margin-right: 24px;
+        }
+    }
+
+    mat-checkbox.mat-checkbox-checked {
+        ::ng-deep {
+            .mat-checkbox-background {
+                width: 24px;
+                height: 24px;
+                background: #8470DA;
+                border-radius: 4px;
+            }
+        }
+    }
+
+    .checkoutBtn {
+        background-color: #8470DA;
+        border-radius: 8px;
+        height: 45px;
+        width: 197px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .container-fluid {
+        max-height: 68vh;
+        overflow: scroll;
+        padding-bottom: 16px;
+    }
+}

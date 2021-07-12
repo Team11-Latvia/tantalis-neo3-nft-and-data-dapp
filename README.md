@@ -136,19 +136,6 @@ Use existing NEO browser plugin wallet - NeoLine
 - Blockchain backend - .Net
 - Deployment method - Docker with Automated Gitlab pipeline build
 
-
-## Inspiration
-
-## What it does
-
-## How we built it
-
-## Challenges we ran into
-
 ## Accomplishments that we're proud of
 
 One Click Deploy of NFT Smart contract from browser
-
-## What we learned
-
-

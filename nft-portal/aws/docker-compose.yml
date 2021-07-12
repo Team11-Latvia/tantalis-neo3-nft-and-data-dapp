@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+
+  nxa-nft-portal:
+    image: registry.teamxi.cloud/nxa-nft/nxa-nft-portal:latest
+    container_name: nxa-nft-portal
+    hostname: "nxa-nft-portal"
+    # build:
+    #     dockerfile: Dockerfile
+    #     target: production
+    #     context: .
+    ports:
+        - 8080:80
+

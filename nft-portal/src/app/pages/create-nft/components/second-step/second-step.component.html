@@ -1,0 +1,60 @@
+<div class="row">
+    <h2> Set your NFT price </h2>
+</div>
+
+<div class="row mx-0 content d-flex align-items-center justify-content-center">
+    <div class="col-12 col-sm-9 col-lg-6 my-3 my-sm-4 py-lg-5">
+        <form [formGroup]="form">
+            <div class="my-3">
+                <p class="mb-2"> Price </p>
+                <div class="input-group">
+                    <input class="form-control py-2 border-right-0" formControlName="price" type="number" placeholder="NEO GAS">
+                    <span class="input-group-append">
+                        <div class="input-group-text bg-transparent">
+                            <img class="currency-icon" src="assets/icons/neo-gas.svg">
+                        </div>
+                    </span>
+                </div>
+            </div>
+
+            <div class="my-3">
+                <p class="mb-2"> Set Your interest for secondary market trades </p>
+                <div class="input-group control">
+                    <input class="form-control py-2 border-right-0" (keyup)="updateTotalFee($event)" formControlName="interest" type="number" placeholder="10%">
+                    <span class="input-group-append">
+                        <div class="input-group-text bg-transparent">
+                            <div>
+                                <div class="arrow">
+                                    <mat-icon>keyboard_arrow_up</mat-icon>
+                                </div>
+                                <div class="arrow">
+                                    <mat-icon>keyboard_arrow_down</mat-icon>
+                                </div>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <p> Fee to Tantalis is 2,5% fixed </p>
+            </div>
+
+            <div class="d-flex align-items-center mb-5">
+                <p class="m-0 me-3"> Total fee is <span class="fw-bold"> {{totalFee}}% </span> </p>
+                <img src="assets/icons/info.svg">
+            </div>
+
+            <div>
+                <p class="fw-bold"> Instruction </p>
+                <p>
+                    Your added wallet will be Your ID for any trades with this asset. <a routerLink="#"> Read more </a>
+                </p>
+            </div>
+
+            <div class="mt-4">
+                <button mat-raised-button color="primary" [disabled]="form.invalid" (click)="submit()"> Set Price </button>
+            </div>
+        </form>
+    </div>
+</div>

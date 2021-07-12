@@ -1,0 +1,95 @@
+nav.navbar {
+    background-color: white !important;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 70px;
+    box-shadow: 0 0 20px 0 rgb(0 0 0 / 15%);
+
+    .input-group.customSearch {
+        border-bottom: 1px solid #D3DCE6;
+        width: 250px;
+        .input-group-prepend .input-group-text {
+            height: 100%;
+            border: none;
+            font-size: 16px !important;
+            padding: 4px;
+        }
+        input {
+            border: none !important;
+            font-size: 12px !important;
+        }
+    }
+
+    /* hide the blue outline */
+    .form-control:focus {
+        outline: 0 !important;
+        border-color: initial;
+        box-shadow: none;
+    }
+
+    .vr {
+        border-right: 1px solid #D3DCE6;
+        height: 30px;
+    }
+
+    img.avatar {
+        border: 1px solid #8470DA;
+    }
+
+    button.logIn {
+        width: 114px;
+        height: 45px;
+        box-shadow: none;
+        font-weight: 600;
+    }
+
+    button.signUp {
+        background-color: #8470DA;
+        width: 136px;
+        height: 45px;
+    }
+
+    button.market {
+        height: 34px;
+        padding: 7px, 16px, 7px, 16px;
+        background: #EEF2F7;
+    }
+    button.market.active {
+        background: #8470DA;
+        color: white;
+    }
+    .p-left-2-rem {
+        padding-left: 2rem;
+    }
+    .icon-btn {
+        background-color: transparent;
+        border: none;
+        mat-icon {
+            line-height: 30px;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+}
+
+@media screen and (max-width: 575px) {
+    nav.navbar {
+        height: 60px;
+        .hamburger {
+            height: 60px;
+            z-index: 9999999;
+            position: relative;
+            background-color: white;
+        }
+        .customToggle {
+            background-color: white;
+            box-shadow: 0 19px 20px 4px rgb(0 0 0 / 15%);
+            border-top: 1px solid #D3DCE6;;
+            .content {
+                height: 60px;
+                padding: 0px;
+            }
+        }
+    }
+}

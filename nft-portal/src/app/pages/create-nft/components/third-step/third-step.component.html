@@ -1,0 +1,65 @@
+<div class="row">
+    <h2> Create your item </h2>
+</div>
+
+<div class="row mx-0 content d-flex align-items-center justify-content-center">
+    <div class="col-12 col-sm-9 col-lg-6 my-3 my-sm-4 py-lg-5">
+        <form [formGroup]="form">
+            <p class="fw-bold">
+                Attachment
+            </p>
+            <p class="mb-4">
+                Please add Your digital item here. It will be stored in DFS and protected accordingly.
+            </p>
+            <div class="imgUpload d-flex align-items-end justify-content-center p-3 p-sm-4 mb-5" (click)="fileInput.click()">
+                <img *ngIf="!uploadedFile" src="assets/imgs/createCollection/image.png">
+
+                <div *ngIf="uploadedFile" class="file-uploaded-container">
+                    <div class="file-uploaded-icon-container">
+                        <mat-icon>check_circle</mat-icon>
+                    </div>
+
+                    {{ uploadedFile.name }}
+                </div>
+
+                <p class="text-center">
+                    Browse media on your device
+                </p>
+                <input class="upload-input" type="file" #fileInput (change)="uploadFile($event)">
+            </div>
+
+            <div class="my-3">
+                <p class="mb-2"> Name </p>
+                <input type="text" class="form-control" formControlName="name" placeholder="Name">
+            </div>
+
+            <div class="my-3">
+                <p class="mb-2"> Symbol </p>
+                <input type="text" class="form-control" formControlName="symbol" placeholder="Symbol">
+            </div>
+
+            <!-- <div class="my-3">
+                <p class="mb-2"> Count </p>
+                <input type="number" class="form-control" formControlName="count" placeholder="Count">
+            </div> -->
+
+            <div class="my-3">
+                <p class="mb-2"> Art </p>
+                <select class="form-select border-0" formControlName="type" aria-label="Default select example">
+                    <option *ngFor="let category of categories" [value]="category.name">{{ category.name }}</option>
+                </select>
+            </div>
+
+            <div class="my-3">
+                <div class="form-group">
+                    <label for="description" class="mb-2"> Descripition </label>
+                    <textarea class="form-control" id="description" formControlName="description" placeholder="Descripition" rows="3"></textarea>
+                </div>
+            </div>
+            
+            <div class="mt-4">
+                <button mat-raised-button color="primary" [disabled]="form.invalid" (click)="createNFT()"> Create your NFT </button>
+            </div>
+        </form>
+    </div>
+</div>

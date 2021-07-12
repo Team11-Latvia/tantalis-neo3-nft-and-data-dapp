@@ -1,0 +1,90 @@
+<div class="container-fluid customContainer">
+    <div class="row py-3 py-sm-4 d-flex align-items-center">
+        <mat-icon class="me-3 me-sm-4">keyboard_arrow_left</mat-icon>
+        <div class="step d-flex align-items-center justify-content-center"> Step2 </div>
+    </div>
+
+    <div class="row">
+        <h2> Create your item </h2>
+    </div>
+
+    <div class="row mx-0 content d-flex align-items-center justify-content-center">
+        <div class="col-12 col-sm-9 col-lg-6 my-3 my-sm-4 py-lg-5">
+            <div>
+                <div class="my-3">
+                    <p class="mb-2"> Minimum Bid </p>
+                    <div class="input-group">
+                        <input class="form-control py-2 border-right-0" type="search" placeholder="ETH">
+                        <span class="input-group-append">
+                            <div class="input-group-text bg-transparent">
+                                <img src="assets/icons/ethereum.svg">
+                            </div>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="my-3">
+                    <p class="mb-2"> Reserve price </p>
+                    <div class="input-group">
+                        <input class="form-control py-2 border-right-0" type="search" placeholder="ETH">
+                        <span class="input-group-append">
+                            <div class="input-group-text bg-transparent">
+                                <img src="assets/icons/ethereum.svg">
+                            </div>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="my-3">
+                    <p class="mb-2"> Expiration Date </p>
+                    <select class="form-select border-0" aria-label="Default select example">
+                        <option selected disabled>5 day</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+
+                <div class="my-3">
+                    <p class="mb-2"> Price </p>
+                    <div class="input-group control">
+                        <input class="form-control py-2 border-right-0" type="search" placeholder="10%">
+                        <span class="input-group-append">
+                            <div class="input-group-text bg-transparent">
+                                <div>
+                                    <div class="arrow">
+                                        <mat-icon>keyboard_arrow_up</mat-icon>
+                                    </div>
+                                    <div class="arrow">
+                                        <mat-icon>keyboard_arrow_down</mat-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <p> Fee to Tantalis is 2,5% fixed </p>
+                </div>
+
+                <div class="d-flex align-items-center mb-5">
+                    <p class="m-0 me-3"> Total fee is <span class="fw-bold"> 12,5% </span> </p>
+                    <img src="assets/icons/info.svg">
+                </div>
+
+                <div>
+                    <p class="fw-bold"> Instruction </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque arcu facilisi ultrices ac
+                        lorem faucibus. <a routerLink="#"> Read more </a>
+                    </p>
+                </div>
+
+                <div class="mt-4">
+                    <button mat-raised-button color="primary" routerLink="/place-bid"> Post your listing </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

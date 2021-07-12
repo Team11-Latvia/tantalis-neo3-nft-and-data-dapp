@@ -1,0 +1,16 @@
+##
+## Copyright (c) 2021 - Team11. All rights reserved.
+##
+
+version: '3.7'
+
+services:
+
+  nxa-nft-api:
+    build:
+      dockerfile: Dockerfile
+      target: development
+      context: .
+    volumes:
+      - ./src:/app/src
+    command: make start-dev

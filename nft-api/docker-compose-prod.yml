@@ -1,0 +1,11 @@
+##
+## Copyright (c) 2021 - Team11. All rights reserved.
+##
+
+version: '3.7'
+
+services:
+
+  nxa-nft-api:
+    build:
+      target: production

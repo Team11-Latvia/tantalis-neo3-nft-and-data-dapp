@@ -1,0 +1,96 @@
+##
+## Copyright (c) 2020 - Team11. All rights reserved.
+##
+
+version: '3.7'
+
+services:
+
+  nxa-nft-api:
+    image: registry.teamxi.cloud/nxa-nft/nxa-nft-api:latest
+    container_name: nxa-nft-api
+    hostname: "nxa-nft-api"
+    # build:
+    #   dockerfile: Dockerfile
+    #   target: production
+    #   context: .
+    links:
+      - "nxa-nft-api-database:nxa-nft-apii-database"
+    depends_on:
+      - nxa-nft-api-database
+    networks:
+      - nxa_nft_api_net
+    ports:
+      - ${API_HTTP_PORT}:${API_HTTP_PORT}
+    environment:
+      # Services
+      API_HOST: ${API_HOST}
+      API_HTTP_PORT: ${API_HTTP_PORT}
+      # DB
+      API_DB_HOST: ${API_DB_HOST}
+      API_DB_PORT: ${API_DB_PORT}
+      API_DB_DATABASE: ${API_DB_DATABASE}
+      API_DB_USER: ${API_DB_USER}
+      API_DB_PASSWORD: ${API_DB_PASSWORD}
+
+  #
+  # From:
+  #   https://zgadzaj.com/development/docker/docker-compose/containers/rabbitmq
+  #   https://github.com/micahhausler/rabbitmq-compose/blob/master/docker-compose.yml
+  #
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: rabbitmq
+    hostname: "rabbitmq"
+    networks:
+      - nxa_nft_api_net
+    labels:
+      NAME: "rabbitmq"
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+    ports:
+      - 5672:5672
+      - 15672:15672
+  
+  #
+  # From: https://hub.docker.com/_/postgres
+  #
+  nxa-nft-api-database:
+    image: postgres:12
+    container_name: nxa-nft-api-database
+    hostname: "nxa-nft-api-database"
+    ports:
+      - ${API_DB_PORT}:${API_DB_PORT}
+    networks:
+      - nxa_nft_api_net
+    volumes:
+        - nxa-nft-api-database-data:/var/lib/postgresql/data
+    environment:
+        POSTGRES_DB: ${API_DB_DATABASE}
+        POSTGRES_USER: ${API_DB_USER}
+        POSTGRES_PASSWORD: ${API_DB_PASSWORD}
+
+  #
+  # From: https://www.pgadmin.org/docs/pgadmin4/latest/container_deployment.html
+  # WARNING: DEV ONLY
+  #
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: nxa-nft-api-pgadmin
+    hostname: "nxa-nft-api-pgadmin"
+    networks:
+      - nxa_nft_api_net
+    environment:
+        PGADMIN_DEFAULT_EMAIL: pgadmin@xdaro.com
+        PGADMIN_DEFAULT_PASSWORD: 0e4896a9-c3c1-46de-bb69-48032f00eccc
+    ports:
+      - 5050:80
+
+volumes:
+  nxa-nft-api-database-data:
+
+networks:
+  nxa_nft_api_net:
+    external: false
+

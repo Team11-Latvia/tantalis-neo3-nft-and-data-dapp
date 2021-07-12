@@ -1,0 +1,21 @@
+.container-fluid {
+    .step {
+        width: 81px;
+        height: 34px;
+        background-color: #EEF2F7;
+        border-radius: 8px;
+    }
+    .card {
+        background-color: #F8F9FB;
+        border-radius: 8px;
+        h2 {
+            font-weight: 600 !important;
+        }
+        button {
+            width: 191px;
+            height: 45px;
+            background-color: #8470DA;
+            border-radius: 8px;
+        }
+    }
+}

@@ -1,0 +1,75 @@
+.signUp {
+    .news {
+        background-color: #EEF2F7;
+        h1 {
+            font-size: 42px;
+            font-weight: 800;
+        }
+        p {
+            font-size: 16px;
+            font-weight: 400;
+        }
+        .input-group {
+            width: 600px;
+            font-size: 16px;
+            height: 45px;
+            input {
+                border-bottom-left-radius: 8px;
+                border-top-left-radius: 8px;
+            }
+        }
+
+        button.signUpBtn {
+            width: 120px;
+            background-color: #8470DA;
+            height: 45px;
+        }
+    }
+}
+
+.footer {
+    height: 70px;
+    background-color: #F8F9FB;
+    img.logo {
+        width: 136px;
+    }
+
+    span {
+        font-size: 12px;
+    }
+
+    a {
+        color: #3B4857;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 700;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .footer {
+        height: 90px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .signUp {
+        .news {
+            h1 {
+                font-size: 28px;
+            }
+            .input-group {
+                input {
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+
+    .footer {
+        height: 85px;
+        img.logo {
+            width: 107px;
+        }
+    }
+}

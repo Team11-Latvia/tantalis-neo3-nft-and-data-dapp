@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="close">
+        <mat-icon (click)="close()">close</mat-icon>
+    </div>
+
+    <div class="row text-center mb-3">
+        <h3 class="fw-bold"> Place a Bid </h3>
+    </div>
+
+    <div class="row">
+        <div class="my-3">
+            <p class="mb-2"> Price </p>
+            <div class="input-group">
+                <input class="form-control py-2 border-right-0" type="search" value="1.2" placeholder="Price">
+                <span class="input-group-append">
+                    <div class="input-group-text bg-transparent">
+                        <img src="assets/icons/ethereum.svg">
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+        <p class="fw-bold"> $1 567 </p>
+
+        <div class="my-3">
+            <h5 class="m-0"> Your balance </h5>
+            <div class="d-flex align-items-center">
+                <img src="assets/icons/ethereum.svg" class="me-2">
+                <h3 class="m-0 fw-bold me-3"> 0,0214 </h3>
+                <h3 class="m-0 fw-light"> $550 </h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center mt-4 mb-2 mb-sm-3">
+        <button mat-raised-button color="primary" class="placeBidBtn" routerLink="/profile" (click)="placeBid()">
+            Place a Bid
+        </button>
+    </div>
+</div>

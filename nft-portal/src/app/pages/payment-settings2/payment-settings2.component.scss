@@ -1,0 +1,58 @@
+.container-fluid {
+    .step {
+        width: 81px;
+        height: 34px;
+        background-color: #EEF2F7;
+        border-radius: 8px;
+    }
+    .content {
+        background-color: #EEF2F7;
+        border-radius: 8px;
+        .input-group {
+            background: white;
+            border-radius: 3px;
+            height: 45px;
+            &:focus-within {
+                box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+            }
+            input {
+                border: none;
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+            .input-group-text {
+                border: 0;
+                display: flex;
+                align-items: center;
+                height: 100%;
+            }
+        }
+        select {
+            border-radius: 3px;
+            height: 45px;
+        }
+        .input-group.control {
+            .input-group-text {
+                .arrow {
+                    height: 16px;
+                    mat-icon {
+                        font-size: 16px;
+                        width: 16px;
+                        height: 8px;
+                    }
+                }
+            }
+        }
+        a {
+            color: #8470DA;
+            text-decoration: none;
+        }
+        button {
+            background-color: #8470DA;
+            height: 45px;
+            width: 191px;
+            border-radius: 8px;
+        }
+    }
+}

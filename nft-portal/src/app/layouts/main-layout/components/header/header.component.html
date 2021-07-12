@@ -1,0 +1,146 @@
+<nav class="navbar navbar-expand-lg bg-light fixed-top navbar-transparent" color-on-scroll="500">
+    <div class="container-fluid customContainer d-none d-sm-flex">
+        <div class="d-none d-sm-flex align-items-center">
+            <a routerLink="/home" class="d-none d-lg-flex">
+                <img src="assets/logos/logo.svg" class="me-5">
+            </a>
+            
+            <a routerLink="/home" class="d-none d-sm-flex d-lg-none">
+                <img src="assets/logos/mini-logo.svg" class="me-5">
+            </a>
+            
+            <div class="input-group customSearch">
+                <span class="input-group-prepend">
+                    <div class="input-group-text bg-transparent border-right-0">
+                        <img src="assets/icons/search.svg">
+                    </div>
+                </span>
+                <input class="form-control py-2 border-left-0 border" type="search" id="example-search-input" placeholder="Search">
+                <span class="input-group-append">
+              </span>
+            </div>
+        </div>
+
+        <div class="d-none d-sm-flex align-items-center">
+            <div class="me-3 d-flex align-items-center">
+                <div>
+                    <button mat-raised-button class="market active me-3">
+                        <h5 class="m-0"> NFT Market </h5>
+                    </button>
+                    <button mat-raised-button class="market me-3" (click)="openDataMarketCommingSoon()">
+                        <h5 class="m-0"> Data Market </h5>
+                    </button>
+                </div>
+            </div>
+
+            <div class="vr"></div>
+
+            <div *ngIf="isLoggedIn; else notLogin" class="d-flex align-items-center">
+                <div class="p-left-20">
+                    <button class="icon-btn" [matMenuTriggerFor]="walletMenu">
+                        <img src="assets/icons/wallet-black.svg">
+                    </button>
+                    <mat-menu #walletMenu="matMenu" xPosition="before" class="walletMenu mt-3 px-3 rounded">
+                        <app-wallet (click)="$event.stopPropagation()"></app-wallet>
+                    </mat-menu>
+                </div>
+
+                <div class="p-left-20">
+                    <button class="icon-btn" [matMenuTriggerFor]="sectionMenu">
+                        <mat-icon>keyboard_arrow_down</mat-icon>
+                    </button>
+                    <mat-menu #sectionMenu="matMenu" xPosition="before" class="header-menu mt-3 px-3 rounded">
+                        <button mat-menu-item class="d-flex align-items-center p-0" routerLink="/profile">
+                            <img src="assets/icons/user.svg" class="me-2">
+                            <p class="m-0"> My profile </p>
+                        </button>
+                        
+                        <hr class="m-0">
+                        <button mat-menu-item class="d-flex align-items-center p-0" routerLink="/catalog">
+                            <img src="assets/logos/compass.svg" class="me-2">
+                            <p class="m-0"> Catalog </p>
+                        </button>
+                    </mat-menu>
+                </div>
+            </div>
+            <ng-template #notLogin>
+                <div class="p-left-2-rem">
+                    <button mat-raised-button color="primary" class="signUp" (click)="openSignUpDialog()">
+                        Connect Wallet
+                    </button>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+
+    <div class="container-fluid customContainer d-block d-sm-none">
+        <div class="row hamburger">
+            <div class="d-flex align-items-center justify-content-between">
+                <button mat-icon-button (click)="toggle()">
+                    <mat-icon *ngIf="isOpen; else closed">close</mat-icon>
+                    <ng-template #closed>
+                        <img src="assets/icons/menu.svg">
+                    </ng-template>
+                </button>
+
+                <a routerLink="/home">
+                    <img src="assets/logos/logo.svg">
+                </a>
+    
+                <button mat-icon-button>
+                    <img src="assets/icons/search.svg">
+                </button>
+            </div>
+        </div>
+
+        <div class="row customToggle" *ngIf="showCustomToggle" [@openClose]="isOpen ? 'open' : 'closed'">
+            <div class="content col-12 d-flex align-items-center justify-content-between">
+                <div class="ms-2 d-flex">
+                    <button mat-raised-button class="market active me-3">
+                        <h5 class="m-0"> NFT Market </h5>
+                    </button>
+                    <button mat-raised-button class="market">
+                        <h5 class="m-0"> Data Market </h5>
+                    </button>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div *ngIf="isLoggedIn; else notLogin" class="d-flex align-items-center">
+                        <div>
+                            <button class="icon-btn" [matMenuTriggerFor]="walletMenu">
+                                <img src="assets/icons/wallet-black.svg">
+                            </button>
+                            <mat-menu #walletMenu="matMenu" xPosition="before" class="walletMenu mt-3 px-3 rounded">
+                                <app-wallet (click)="$event.stopPropagation()"></app-wallet>
+                            </mat-menu>
+                        </div>
+        
+                        <div class="p-left-10">
+                            <button class="icon-btn" [matMenuTriggerFor]="sectionMenu">
+                                <mat-icon>keyboard_arrow_down</mat-icon>
+                            </button>
+                            <mat-menu #sectionMenu="matMenu" xPosition="before" class="header-menu mt-3 px-3 rounded">
+                                <button mat-menu-item class="d-flex align-items-center p-0" routerLink="/profile">
+                                    <img src="assets/icons/user.svg" class="me-2">
+                                    <p class="m-0"> My profile </p>
+                                </button>
+                                
+                                <hr class="m-0">
+                                <button mat-menu-item class="d-flex align-items-center p-0" routerLink="/catalog">
+                                    <img src="assets/logos/compass.svg" class="me-2">
+                                    <p class="m-0"> Catalog </p>
+                                </button>
+                            </mat-menu>
+                        </div>
+                    </div>
+                    <ng-template #notLogin>
+                        <div>
+                            <button mat-raised-button color="primary" class="signUp" (click)="openSignUpDialog()">
+                                Connect Wallet
+                            </button>
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

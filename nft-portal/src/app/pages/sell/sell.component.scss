@@ -1,0 +1,79 @@
+.customContainer {
+    .leftPanel {
+        position: relative;
+        .field {
+            background: #EEF2F7;
+            height: 34px;
+            padding: 7px 16px 7px 16px;
+            border-radius: 8px;
+        }
+        button.sell {
+            background-color: #8470DA;
+            border-radius: 8px;
+            height: 45px;
+            width: 125px;
+        }
+        .onlyMobile {
+            h2 {
+                font-size: 18px !important;
+            }
+            h3 {
+                font-size: 18px !important;
+            }
+        }
+        .favorite {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            mat-icon {
+                background: white;
+                border-radius: 50%;
+                width: 32px;
+                height: 32px;
+                color: #8470DA;
+            }
+        }
+    }
+    .rightPanel {
+        button.sell {
+            background-color: #8470DA;
+            border-radius: 8px;
+            height: 45px;
+            width: 197px;
+        }
+        button.collection {
+            background-color: #EEF2F7;
+            border-radius: 8px;
+            height: 34px;
+            width: 148px;
+        }
+        .history {
+            button.historyBtn {
+                padding: 0;
+                box-shadow: none;
+                height: 36px;
+                ::ng-deep .mat-button-wrapper {
+                    display: flex;
+                }
+            }
+            mat-expansion-panel {
+                box-shadow: none;
+                mat-expansion-panel-header {
+                    padding: 0;
+                    ::ng-deep {
+                        .mat-content {
+                            flex: inherit;
+                        }
+                    }
+                }
+                ::ng-deep .mat-expansion-panel-body {
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    .mat-form-field + .mat-form-field {
+        margin-left: 8px;
+    }
+}

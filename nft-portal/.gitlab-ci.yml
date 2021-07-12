@@ -1,0 +1,79 @@
+variables:
+  REGISTRY_IMAGE: registry.teamxi.cloud/nxa-nft/nxa-nft-portal
+  DOCKER_TLS_CERTDIR: "/certs"
+  REMOTE_HOST: portal.nft.teamxi.cloud
+
+stages:
+  - build
+  - deploy
+
+# include:
+  # jobs to run after merge requests is done
+#  - local: /gitlab-ci/jobs-after-merge.yml
+  # jobs to run when merge requests arrive
+#  - local: /gitlab-ci/jobs-before-merge.yml
+
+Build-nxa-open-api:
+  image: docker:19.03.12
+  # when: manual
+  services:
+    - docker:19.03.12-dind
+  stage: build
+  tags:
+    - docker
+    - build
+  before_script:
+    - echo $HARBOR_USERNAME
+    - echo $HARBOR_REGISTRY
+    - echo -n $HARBOR_PASSWORD | docker login -u $HARBOR_USERNAME --password-stdin $HARBOR_REGISTRY
+  after_script:
+    - docker logout $HARBOR_REGISTRY
+  script:
+    - apk update && apk add git make
+    # - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.teamxi.cloud/team11/frontend/admin-config.git admin-frontend-config
+    # - make build-environment ENVIRONMENT=bankomia-agent
+    - docker pull $REGISTRY_IMAGE:latest || true
+    - >
+      docker build -f Dockerfile
+      --pull
+      --cache-from $REGISTRY_IMAGE:latest
+      --tag $REGISTRY_IMAGE:$CI_COMMIT_SHA
+      --tag $REGISTRY_IMAGE:latest
+      .
+    - docker push $REGISTRY_IMAGE:$CI_COMMIT_SHA
+    - docker push $REGISTRY_IMAGE:latest
+  
+reDeploy:
+  image: ubuntu
+  stage: deploy
+  # needs: []
+  before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client git -y )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+
+    - ssh-keyscan $REMOTE_HOST >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  tags:
+  - docker
+  - build
+  script:
+  # - echo -n $HARBOR_PASSWORD | docker login -u $HARBOR_USERNAME --password-stdin $HARBOR_REGISTRY
+  - ssh ubuntu@$REMOTE_HOST "echo -n $HARBOR_PASSWORD | docker login -u $HARBOR_USERNAME --password-stdin $HARBOR_REGISTRY"
+  #
+  #
+  - scp ./aws/docker-compose.yml ubuntu@$REMOTE_HOST:~/docker-compose/
+  # - scp ./.env ubuntu@$REMOTE_HOST:~/docker-compose/
+  - ssh ubuntu@$REMOTE_HOST "ls; pwd;"
+  - ssh ubuntu@$REMOTE_HOST "cd docker-compose/; source .env; docker-compose down || true"
+  - ssh ubuntu@$REMOTE_HOST "cd docker-compose/; source .env; docker-compose pull"
+  - ssh ubuntu@$REMOTE_HOST "cd docker-compose/; source .env; docker-compose up --force-recreate -d"
+
+
+  # try to clone yourself. A *PUBLIC* key paired to the SSH_PRIVATE_KEY was added as deploy key to this repository
+  # - 'sudo su -'
+  # - docker-compose
+

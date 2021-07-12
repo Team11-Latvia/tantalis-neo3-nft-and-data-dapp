@@ -1,0 +1,360 @@
+<div class="container-fluid customContainer">
+    <!-- Trading -->
+    <div class="row trade py-4">
+        <div class="col-12 col-sm-7 col-lg-6 leftPanel d-flex align-items-center">
+            <div class="pe-0 pe-lg-4">
+                <h1>
+                    Collect. Discover. Trade
+                </h1>
+
+                <h3>
+                    Discover, collect, and sell extraordinary NFTs on the world's first & largest NFT marketplace
+                </h3>
+
+                <div class="buttons d-flex justify-content-between justify-content-sm-start">
+                    <button mat-raised-button color="primary" class="explore me-3" routerLink="/catalog">
+                        Explore
+                    </button>
+                    <button mat-raised-button class="create" (click)="createNft()">
+                        Create
+                    </button>
+                </div>
+
+                <hr class="my-4">
+
+                <div class="row count">
+                    <div class="col-4">
+                        <h2 class="m-0">
+                            15K+
+                        </h2>
+                        <h3>
+                            Artwork
+                        </h3>
+                    </div>
+                    <div class="col-4">
+                        <h2 class="m-0">
+                            80K+
+                        </h2>
+                        <h3>
+                            Auction
+                        </h3>
+                    </div>
+                    <div class="col-4">
+                        <h2 class="m-0">
+                            2K+
+                        </h2>
+                        <h3>
+                            Creators
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-none d-sm-block col-0 col-sm-5 col-lg-6 rightPanel" (click)="openNFTCard(heroNftItem)">
+            <div class="hero-item-image-container">
+                <img *ngIf="heroNftItem" [src]="heroNftItem.previewUrl" class="w-100">
+                <img *ngIf="!heroNftItem" src="/assets/imgs/image-not-found.jpeg" class="w-100">
+            </div>
+            
+            <div class="hero-item-details p-3">
+                <h2 class="m-0">
+                    {{ heroNftItem?.name }}
+                </h2>
+
+                <div class="d-flex align-items-center justify-content-between mt-3">
+                    <div class="d-flex align-items-center">
+                        <img src="assets/imgs/user-blank.jpg" class="userAvatar me-2">
+                        <div>
+                            <h3 class="m-0 mb-1 font-weight-light">
+                                Ceator
+                            </h3>
+                            <h3 class="m-0 font-weight-bold">
+                                {{ heroNftItem?.authorName }}
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="d-flex align-items-center">
+                            <img src="assets/icons/neo-gas.svg" class="me-2 currency-icon">
+                            <h2 class="m-0">
+                                {{ heroNftItem?.price?.price }}
+                            </h2>
+                        </div>
+                    </div>
+
+                    <!-- <div>
+                        <h3 class="m-0 mb-1 font-weight-light text-end">
+                            $550
+                        </h3>
+                        <h3 class="m-0 font-weight-light">
+                            Last 0,0009
+                        </h3>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Digital Asset -->
+    <div class="row dignitalAsset my-5 py-5">
+        <div class="col-12 mb-5">
+            <div class="row d-flex align-items-center">
+                <div class="col-12 col-sm-6">
+                    <h1>
+                        Easy discover digital asset
+                        All over the world!
+                    </h1>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <p>
+                        Beautiful collections and Data sets for You! We are a cross-chain platform that allows You to manage all Your digital assets in one place!
+                    </p>
+                    <a routerLink="/catalog" class="pt-2">
+                        View All
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="row">
+                <div class="col-12 col-sm-4 my-2" *ngFor="let item of chosenNftItems">
+                    <div class="card border-0" (click)="openNFTCard(item)">
+                        <img [src]="item.previewUrl" class="preview-image w-100">
+                        
+                        <div class="detail p-2 p-lg-3">
+                            <h4 class="m-0"> {{ item?.name }} </h4>
+
+                            <div>
+                                <span> #{{ item.index }} </span>
+                            </div>
+
+                            <div class="d-flex align-items-center justify-content-between mt-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="assets/imgs/user-blank.jpg" class="userAvatar me-2">
+                                    <div>
+                                        <h3 class="m-0 font-weight-light">
+                                            {{ item.authorName }}
+                                        </h3>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="d-flex align-items-center">
+                                        <img src="assets/icons/neo-gas.svg" class="me-2 currency-icon">
+                                        <h4 class="m-0">
+                                            {{ item?.price?.price }}
+                                        </h4>
+                                    </div>
+                                </div>
+
+                                <!-- <div>
+                                    <h3 class="m-0 mb-1 font-weight-light text-end">
+                                        ${{ card?.price }}
+                                    </h3>
+                                    <p class="m-0 font-weight-light">
+                                        {{ card?.last }}
+                                    </p>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row dignitalAsset my-5 py-5">
+        <div class="col-12 mb-5">
+            <div class="row d-flex align-items-center">
+                <div class="col-12 col-sm-6">
+                    <h1>
+                        Trending collections in
+                        all categories
+                    </h1>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <p>
+                        Find something that sparks joy, at the same time bringing digital value to Your own life.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="row">
+                <div class="col-12 col-sm-4 my-2" *ngFor="let item of trendingNftItems">
+                    <div class="card border-0" (click)="openNFTCard(item)">
+                        <img [src]="item.previewUrl" class="preview-image w-100">
+                        
+
+                        <div class="detail p-2 p-lg-3">
+                            <h4 class="m-0"> {{ item?.name }} </h4>
+
+                            <div>
+                                <span> #{{ item.index }} </span>
+                            </div>
+
+                            <div class="d-flex align-items-center justify-content-between mt-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="assets/imgs/user-blank.jpg" class="userAvatar me-2">
+                                    <div>
+                                        <h3 class="m-0 font-weight-light">
+                                            {{ item.authorName }}
+                                        </h3>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="d-flex align-items-center">
+                                        <img src="assets/icons/neo-gas.svg" class="me-2 currency-icon">
+                                        <h4 class="m-0">
+                                            {{ item?.price?.price }}
+                                        </h4>
+                                    </div>
+                                </div>
+
+                                <!-- <div>
+                                    <h3 class="m-0 mb-1 font-weight-light text-end">
+                                        ${{ card?.price }}
+                                    </h3>
+                                    <p class="m-0 font-weight-light">
+                                        {{ card?.last }}
+                                    </p>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="row dignitalAsset">
+        <div class="col-12 mb-5">
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    <h1>
+                        Trending collections in
+                        all categories
+                    </h1>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <h5>
+                        Find something that sparks joy, at the same time bringing digital value to Your own life.
+                    </h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="row">
+                <div class="col-12 col-sm-4 my-2" *ngFor="let card of trendingCards">
+                    <div class="card border-0" (click)="goCollectionVar()">
+                        <img [src]="card?.cardImg" class="cardImg w-100">
+                        <div class="detail p-2 p-lg-3">
+                            <div class="d-flex align-items-end justify-content-between mt-3">
+                                <div class="d-flex align-items-center">
+                                    <img [src]="card?.userAvatar" class="userAvatar me-2">
+                                    <div>
+                                        <h4 class="m-0 mb-1 font-weight-light">
+                                            {{ card?.userName }}
+                                        </h4>
+                                        <p class="m-0">
+                                            {{ card?.itemCount }} items
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="row howItWorks my-5 py-5">
+        <div class="col-12">
+            <h1>
+                How it works
+            </h1>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 my-3">
+            <div class="d-flex align-items-center mb-3">
+                <img src="assets/icons/wallet.svg" class="me-2">
+                <h5 class="m-0 fw-bold">
+                    Attach your wallet
+                </h5>
+            </div>
+            <p>
+                Once you’ve set up your wallet of choice, connect it to Tantalis by clicking the wallet icon in the top right corner.
+            </p>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 my-3">
+            <div class="d-flex align-items-center mb-3">
+                <img src="assets/icons/grid.svg" class="me-2">
+                <h5 class="m-0 fw-bold">
+                    Create your collection
+                </h5>
+            </div>
+            <p>
+                Click Create and set up your collection. Add social links, a description, profile & banner images, and
+                set a secondary sales fee.
+            </p>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 my-3">
+            <div class="d-flex align-items-center mb-3">
+                <img src="assets/icons/image.svg" class="me-2">
+                <h5 class="m-0 fw-bold">
+                    Add your NFTs
+                </h5>
+            </div>
+            <p>
+                Upload your work (image, video, audio, or 3D art), add a title and description, and customize your NFTs
+                with properties, stats, and unlockable content.
+            </p>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 my-3">
+            <div class="d-flex align-items-center mb-3">
+                <img src="assets/icons/tag.svg" class="me-2">
+                <h5 class="m-0 fw-bold">
+                    List them for sale
+                </h5>
+            </div>
+            <p>
+                Choose between auctions, fixed-price listings, and declining-price listings. You choose how you want to
+                sell your NFTs, and we help you sell them!
+            </p>
+        </div>
+    </div>
+
+    <div class="row browseCategory">
+        <h1>
+            Browse by category
+        </h1>
+        <div class="col-12 col-sm-6 col-lg-4 my-3" *ngFor="let card of browseCategoryCards">
+            <div class="card p-3">
+                <div class="d-flex align-items-center mb-3">
+                    <img [src]="card?.icon" class="me-2">
+                    <h5 class="m-0 fw-bold"> {{ card?.title }} </h5>
+                </div>
+                <p class="mb-4 description">
+                    {{ card?.description }}
+                </p>
+                <a routerLink="/catalog">
+                    Explore category
+                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center mt-4 mb-5">
+            <button mat-raised-button color="primary" routerLink="/catalog">
+                Explore catalog
+            </button>
+        </div>
+    </div>
+</div>

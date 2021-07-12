@@ -1,0 +1,73 @@
+<div class="container-fluid">
+    <div class="close">
+        <mat-icon (click)="close()">close</mat-icon>
+    </div>
+    <div class="row text-center py-0 py-sm-3 mt-3 mt-sm-0">
+        <h3 class="fw-bold"> Connect your wallet </h3>
+        <h5 class="m-0">
+            By connecting your wallet, you agree to our <a routerLink="/"> Terms og Service </a> and our <a
+                routerLink="/"> Privacy Policy </a>
+        </h5>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="walletSection d-flex align-items-center justify-content-between my-3 px-4 py-3">
+                <div class="d-flex align-items-center">
+                    <img src="assets/icons/neo.svg" class="me-3">
+                    <h5 class="m-0"> Neo </h5>
+                </div>
+                <button mat-raised-button color="primary" (click)="onConnectWallet()">
+                    <h5 class="m-0">
+                        Connect
+                    </h5>
+                </button>
+            </div>
+
+            <div class="walletSection d-flex align-items-center justify-content-between my-3 px-4 py-3">
+                <div class="d-flex align-items-center">
+                    <img src="assets/icons/metamask.svg" class="me-3">
+                    <h5 class="m-0"> Metamask </h5>
+                </div>
+                <button mat-raised-button disabled>
+                    <h5 class="m-0">
+                        Soon
+                    </h5>
+                </button>
+            </div>
+            <div class="walletSection d-flex align-items-center justify-content-between my-3 px-4 py-3">
+                <div class="d-flex align-items-center">
+                    <img src="assets/icons/flamingo.svg" class="me-3">
+                    <h5 class="m-0"> Flamingo </h5>
+                </div>
+                <button mat-raised-button disabled>
+                    <h5 class="m-0">
+                        Soon
+                    </h5>
+                </button>
+            </div>
+            <div class="walletSection d-flex align-items-center justify-content-between my-3 px-4 py-3">
+                <div class="d-flex align-items-center">
+                    <img src="assets/icons/uniswap.svg" class="me-3">
+                    <h5 class="m-0"> Uniswap </h5>
+                </div>
+                <button mat-raised-button disabled>
+                    <h5 class="m-0">
+                        Soon
+                    </h5>
+                </button>
+            </div>
+            <div class="walletSection d-flex align-items-center justify-content-between my-3 px-4 py-3">
+                <div class="d-flex align-items-center">
+                    <img src="assets/icons/Pancake Swap.svg" class="me-3">
+                    <h5 class="m-0"> Pancake Swap </h5>
+                </div>
+                <button mat-raised-button disabled>
+                    <h5 class="m-0">
+                        Soon
+                    </h5>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="container-fluid customContainer">
+    <div class="row py-3 py-sm-4 py-lg-5">
+        <div class="d-flex align-items-center">
+            <mat-icon class="me-3">chevron_left</mat-icon>
+            <div class="frame d-flex align-items-center justify-content-center">
+                <h5 class="m-0"> Catching Fire </h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="row tableSection">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            <!-- Owner Column -->
+            <ng-container matColumnDef="owner">
+                <th mat-header-cell *matHeaderCellDef> Owner </th>
+                <td mat-cell *matCellDef="let element">
+                    <div>
+                        <img [src]="element.ownerAvatar" class="me-2">
+                        {{element.ownerName}}
+                    </div>
+                </td>
+            </ng-container>
+
+            <!-- Current price Column -->
+            <ng-container matColumnDef="price">
+                <th mat-header-cell *matHeaderCellDef>
+                    <div class="me-4 me-sm-0 fw-bold">
+                        Current price
+                    </div>
+                </th>
+                <td mat-cell *matCellDef="let element">
+                    <div class="d-flex align-items-center justify-content-end justify-content-sm-start me-4 me-sm-0">
+                        <img src="assets/icons/ethereum.svg" class="me-2">
+                        <div class="price">
+                            {{element.price}}
+                        </div>
+                    </div>
+                </td>
+            </ng-container>
+
+            <!-- Acton Column -->
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-raised-button routerLink="/card">
+                        Go to
+                    </button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator [length]="dataSource?.length" [pageSize]="10" [pageSizeOptions]="[10, 20, 50]"></mat-paginator>
+    </div>
+</div>

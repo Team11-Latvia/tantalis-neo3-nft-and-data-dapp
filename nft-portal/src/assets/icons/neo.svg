@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<svg width="32" height="32" version="1.1" viewBox="0 0 215 256"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title/>
+    <desc/>
+    <defs>
+        <linearGradient id="linearGradient-1" x1="100%" x2="0%" y1="19.0762886%" y2="80.1721653%">
+            <stop offset="0%" stop-color="#63CC0E"/>
+            <stop offset="100%" stop-color="#A7F21F"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" id="Classic" stroke="none" stroke-width="1">
+        <g id="NEO" transform="translate(-4010.000000, -410.000000)">
+            <g transform="translate(4010.000000, 410.000000)">
+                <polygon fill="url(#linearGradient-1)" id="Rectangle-3" points="0 47.9478827 86.3061889 88.8078176 86.3061889 256 0 215.140065"/>
+                <polygon fill="#63CC0E" id="Rectangle-4" points="126.749186 76.2996743 214.723127 44.1954397 214.723127 211.80456 126.749186 170.527687"/>
+                <polygon fill="#63CC0E" id="Rectangle-5" points="3.33550489 44.6123779 128.416938 0 213.472313 40.0260586 88.8078176 85.0553746"/>
+            </g>
+        </g>
+    </g>
+</svg>

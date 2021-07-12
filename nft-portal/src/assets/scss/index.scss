@@ -1,0 +1,182 @@
+@import './variables';
+
+@import './font';
+@import './navbar';
+@import './responsive';
+@import './modal';
+
+body {
+    // font-family: 'Mulish', sans-serif;
+    font-family: 'Mulish';
+    div, h1, h2, h3, h4, h5, p, span {
+        line-height: 1.255 !important;
+        // font-family: 'Mulish', sans-serif !important;
+        font-family: 'Mulish' !important;
+        font-style: normal !important;
+    }
+
+    h1 {
+        font-size: 42px !important;
+        font-weight: 800 !important;
+    }
+    h2 {
+        font-size: 36px !important;
+        font-weight: 700 !important;
+    }
+    h3 {
+        font-size: 20px !important;
+        font-weight: 600 !important;
+    }
+    h4 {
+        font-size: 18px !important;
+        font-weight: 700 !important;
+    }
+    h5 {
+        font-size: 16px !important;
+        font-weight: 400 !important;
+    }
+    p {
+        font-size: 14px !important;
+        font-weight: 400 !important;
+    }
+    span {
+        font-size: 12px !important;
+        font-weight: 400 !important;
+    }
+
+    .icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    cdk-overlay-container {
+        position: inherit;
+    }
+
+    .cdk-overlay-connected-position-bounding-box {
+        .mat-menu-panel.walletMenu {
+            max-width: 86vw;
+            width: 500px;
+        }
+    }
+
+    .currency-icon {
+        height: 18px;
+        width: 18px;
+    }
+
+    .p-top-10 {
+        padding-top: 10px;
+    }
+    .p-bot-10 {
+        padding-bottom: 10px;
+    }
+    .p-right-10 {
+        padding-right: 10px;
+    }
+    .p-left-10 {
+        padding-left: 10px;
+    }
+
+    .p-top-20 {
+        padding-top: 20px;
+    }
+    .p-bot-20 {
+        padding-bottom: 20px;
+    }
+    .p-right-20 {
+        padding-right: 20px;
+    }
+    .p-left-20 {
+        padding-left: 20px;
+    }
+
+    img.userAvatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    .header-menu button {
+        width: 160px;
+    }
+    
+    .preview-image {
+        height: 330px;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .nft-details-image {
+        max-height: 545px;
+        height: 100%;
+        border-radius: 8px;
+    }
+
+    .upload-input {
+        visibility: hidden;
+        opacity: 0;
+        width: 1px;
+        height: 1px;
+      }
+}
+
+@media screen and (max-width: 991px) {
+    body {
+        h1 {
+            font-size: 24px !important;
+            font-weight: 800 !important;
+        }
+        h2 {
+            font-size: 24px !important;
+            font-weight: 700 !important;
+        }
+        h3 {
+            font-size: 16px !important;
+            font-weight: 600 !important;
+        }
+        h4 {
+            font-size: 14px !important;
+            font-weight: 700 !important;
+        }
+        h5 {
+            font-size: 14px !important;
+            font-weight: 400 !important;
+        }
+        .icon {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .preview-image {
+        height: 250px !important;
+    }
+    .nft-details-image {
+        height: 450px !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .preview-image {
+        height: 200px !important;
+    }
+    .nft-details-image {
+        height: 350px !important;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    // .cdk-overlay-connected-position-bounding-box {
+    //     align-items: center !important;
+    // }
+
+    .preview-image {
+        height: 260px !important;
+    }
+
+    .nft-details-image {
+        height: auto !important;
+    }
+}

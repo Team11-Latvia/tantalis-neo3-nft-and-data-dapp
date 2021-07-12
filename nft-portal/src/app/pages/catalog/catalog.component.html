@@ -1,0 +1,87 @@
+<div class="container-fluid customContainer">
+    <div class="row header pt-5">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h1 class="m-0">
+                Catalog
+            </h1>
+            <button *ngIf="isAuthorized" mat-raised-button color="primary" class="create" routerLink="/select-create-collection">
+                <div class="d-flex align-items-center justify-content-center">
+                    <img src="assets/icons/plus.svg" class="me-2">
+                    Create your NFT
+                </div>
+            </button>
+        </div>
+        
+        <div class="col-12 buttons">
+            <div class="content d-flex">
+                <div *ngFor="let chainOption of chainOptions">
+                    <button mat-raised-button class="field me-3" [class.active]="selectedChainOption === chainOption" (click)="selectedChainOption = chainOption">
+                        <h5 class="m-0"> {{ chainOption }} </h5>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 buttons">
+            <div class="content d-flex flex-md-wrap">
+                <div *ngFor="let category of categories" class="p-top-10">
+                    <button mat-raised-button class="field me-3" [class.active]="selectedCategory.name === category.name" (click)="selectCategory(category)">
+                        <h5 class="m-0"> {{ category.name }} </h5>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row content my-4" *ngIf="dataSource.filteredData.length">
+        <div  class="col-12 col-sm-4 my-3" *ngFor="let item of dataSource.filteredData">
+            <div class="card border-0" (click)="openNFTCard(item)">
+                <img [src]="item.previewUrl" class="preview-image w-100">
+                
+                <div class="detail p-2 p-lg-3">
+                    <h4 class="m-0 fw-bold"> {{ item.name }} </h4>
+
+                        <div>
+                            <span> #{{ item.index }} </span>
+                        </div>
+
+                    <div class="d-flex align-items-center justify-content-between mt-3">
+                        <div class="d-flex align-items-center">
+                            <img src="assets/imgs/user-blank.jpg" class="userAvatar me-2">
+                            <div>
+                                <h3 class="m-0 font-weight-light">
+                                    {{ item.authorName }}
+                                </h3>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center">
+                            <img src="assets/icons/neo-gas.svg" class="me-2 currency-icon">
+                            <h4 class="m-0 fw-bold">{{ item.price?.price }}</h4>
+                        </div>
+                        
+                        <!-- <div>
+                            <h3 class="m-0 mb-1 font-weight-light text-end">
+                                ${{ card?.price }}
+                            </h3>
+                            <p class="m-0 font-weight-light">
+                                {{ card?.last }}
+                            </p>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="favorite">
+                    <mat-icon class="d-flex align-items-center justify-content-center"> {{ item.type === 'Artwork' ? "favorite" : "favorite_border" }} </mat-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <mat-paginator [length]="dataSource.filteredData.length"
+        [pageSize]="size"
+        [pageIndex]="page"
+        [pageSizeOptions]="[10, 20, 50]"
+        (page)="getData($event)">
+    </mat-paginator>
+</div>

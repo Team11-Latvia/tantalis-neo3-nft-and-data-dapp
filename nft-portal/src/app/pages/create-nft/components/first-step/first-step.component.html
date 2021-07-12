@@ -1,0 +1,39 @@
+<div class="row pb-3 pb-sm-4 pb-lg-5">
+    <h2 class="mb-4"> Select your sell method </h2>
+    <div class="col-12 col-sm-6 my-3">
+        <div class="card border-0 p-3 p-sm-4 p-lg-5">
+            <h2 class="text-center"> Set Price </h2>
+            <div class="d-flex align-items-center">
+                <img src="assets/icons/circle-center.svg" class="me-2">
+                <p>Set at a fixed or declining price</p>
+            </div>
+
+            <div class="p-top-10 d-flex align-items-center">
+                <img src="assets/icons/circle-center.svg" class="me-2">
+                <p>Set how much You want to receive in secondary market when Your asset will be sold 2nd time</p>
+            </div>
+            
+            <div class="text-center mt-4">
+                <button mat-raised-button color="primary" (click)="chooseMethod('FIXED')"> Select method </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 my-3">
+        <div class="card border-0 p-3 p-sm-4 p-lg-5">
+            <h2 class="text-center"> Hightest Bid </h2>
+            <div class="d-flex align-items-center">
+                <img src="assets/icons/circle-center.svg" class="me-2">
+                <p>Auction to the highest bidder</p>
+            </div>
+
+            <div class="p-top-10 d-flex align-items-center">
+                <img src="assets/icons/circle-center.svg" class="me-2">
+                <p>Set how much You want to receive in secondary market when Your asset will be sold 2nd time</p>
+            </div>
+            <div class="text-center mt-4">
+                <button mat-raised-button color="primary" (click)="chooseMethod('BID')" disabled> Comming Soon </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+.wallet {
+    h5.address {
+        color: #5F6E80;
+    }
+    button.addFunds {
+        background-color: #8470DA;
+        height: 45px;
+        border-radius: 8px;
+        width: 140px;
+    }
+    .walletSection {
+        border: 1px solid #EEF2F7;
+        border-radius: 8px;
+        button {
+            background: #EEF2F7;
+            height: 34px;
+            border-radius: 8px;
+            font-weight: 600;
+            box-shadow: none;
+        }
+    }
+    .logout-section {
+        text-align: right;
+        padding-right: 0px;
+        padding-bottom: 10px;
+    }
+}

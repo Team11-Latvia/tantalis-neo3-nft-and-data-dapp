@@ -1,0 +1,26 @@
+<div class="container-fluid customContainer">
+    <div class="row py-4 step-container">
+        <div class="col-12">
+            <div class="d-flex align-items-center">
+                <button mat-icon-button *ngIf="currentStep !== 1">
+                    <mat-icon class="me-3 me-sm-4" (click)="prevStep()">keyboard_arrow_left</mat-icon>
+                </button>
+
+                <div class="step d-flex align-items-center justify-content-center"> Step {{ currentStep }} </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <ng-container *ngIf="currentStep === 1">
+        <app-first-step [nftItemData]="nftItemData" (nextStep)="nextStep()"></app-first-step>
+    </ng-container>
+
+    <ng-container *ngIf="currentStep === 2">
+        <app-second-step [nftItemData]="nftItemData" (nextStep)="nextStep()"></app-second-step>
+    </ng-container>
+
+    <ng-container *ngIf="currentStep === 3">
+        <app-third-step [nftItemData]="nftItemData" (nextStep)="nextStep()"></app-third-step>
+    </ng-container>
+</div>

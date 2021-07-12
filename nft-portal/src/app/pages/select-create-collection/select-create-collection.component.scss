@@ -1,0 +1,30 @@
+.container-fluid {
+    .step {
+        width: 81px;
+        height: 34px;
+        background-color: #EEF2F7;
+        border-radius: 8px;
+    }
+    .card {
+        border-radius: 8px;
+        cursor: pointer;
+        img.cardImg {
+            border-radius: 8px 8px 0 0;
+        }
+        .detail {
+            background-color: #EEF2F7;
+            border-radius: 0 0 8px 8px;
+            p {
+                font-size: 12px !important;
+                font-weight: 400 !important;
+                color: #5F6E80;
+            }
+        }
+    }
+    button.add {
+        height: 48px;
+        width: 243px;
+        background-color: #8470DA;
+        border-radius: 8px;
+    }
+}

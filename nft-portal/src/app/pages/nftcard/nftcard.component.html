@@ -1,0 +1,203 @@
+<div class="container-fluid customContainer">
+    <div class="row py-3 py-sm-4 py-lg-5">
+        <!-- Only show on mobile view -->
+        <div class="d-flex d-sm-none col-12 mb-3">
+            <div class="row">
+                <div class="d-flex justify-content-between my-3">
+                    <h2 class="m-0">
+                        {{ item?.name }}
+                    </h2>
+                    <button mat-icon-button [matMenuTriggerFor]="beforeMenu">
+                        <img src="assets/icons/share.svg" class="icon">
+                    </button>
+                    <mat-menu #beforeMenu="matMenu" xPosition="before" class="px-3 rounded">
+                        <button mat-menu-item class="d-flex align-items-center p-0">
+                            <img src="assets/icons/copy.svg" class="me-2">
+                            <p class="m-0"> Copy Link </p>
+                        </button>
+                        <hr class="m-0">
+                        <button mat-menu-item class="d-flex align-items-center p-0">
+                            <img src="assets/icons/facebook.svg" class="me-2">
+                            <p class="m-0"> Share on Facebook </p>
+                        </button>
+                        <hr class="m-0">
+                        <button mat-menu-item class="d-flex align-items-center p-0">
+                            <img src="assets/icons/twitter.svg" class="me-2">
+                            <p class="m-0"> Share to Twitter </p>
+                        </button>
+                    </mat-menu>
+                </div>
+                <div class="d-flex align-items-center">
+                    <img src="assets/imgs/user-blank.jpg" class="userAvatar me-2">
+                    <div>
+                        <h5 class="mb-1"> Creator </h5>
+                        <h5 class="m-0 fw-bold"> {{ item?.authorName }} </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop, Tablet, Mobile view -->
+        <div class="col-12 col-sm-6 leftPanel">
+            <img *ngIf="item" [src]="item.previewUrl" class="nft-details-image w-100">
+
+            <!-- Only show mobile -->
+            <div class="row d-flex d-sm-none align-items-center justify-content-between onlyMobile">
+                <div class="d-flex align-items-center justify-content-between my-3">
+                    <div>
+                        <h5 class="m-0 mb-1">
+                            Current price
+                        </h5>
+                        <div class="d-flex align-items-center">
+                            <img src="assets/icons/neo-gas.svg" class="me-3 icon">
+                            <h2 class="m-0 fw-bold me-3"> {{ item?.price?.price }} </h2>
+                            <!-- <h3 class="m-0"> $550 </h3> -->
+                        </div>
+                    </div>
+
+                    <div>
+                        <button mat-raised-button color="primary" class="buy" (click)="openCheckout()">
+                            Buy Now
+                        </button>
+                    </div>
+
+                    <div>
+                        <button mat-raised-button color="primary" class="buy" (click)="openPhisicalDeliveryCommingSoon()">
+                            Physical Delivery
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4 d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    <img src="assets/imgs/user-blank.jpg" class="userAvatar me-2">
+                    <div>
+                        <h5 class="mb-1"> Creator </h5>
+                        <h5 class="m-0 fw-bold"> {{ item?.authorName }} </h5>
+                    </div>
+                </div>
+                <div class="field">
+                    Art
+                </div>
+            </div>
+            <div class="mt-3">
+                <h5>
+                    {{ item?.description }}
+                </h5>
+            </div>
+
+            <div class="favorite">
+                <mat-icon class="d-flex align-items-center justify-content-center"> {{ favorite ? "favorite" : "favorite_border" }} </mat-icon>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 rightPanel">
+            <div class="row d-none d-sm-flex">
+                <div class="d-flex justify-content-end">
+                    <button mat-icon-button [matMenuTriggerFor]="beforeMenu">
+                        <img src="assets/icons/share.svg" class="icon">
+                    </button>
+                    <mat-menu #beforeMenu="matMenu" xPosition="before" class="px-3 rounded">
+                        <button mat-menu-item class="d-flex align-items-center p-0">
+                            <img src="assets/icons/copy.svg" class="me-2">
+                            <p class="m-0"> Copy Link </p>
+                        </button>
+                        <hr class="m-0">
+                        <button mat-menu-item class="d-flex align-items-center p-0">
+                            <img src="assets/icons/facebook.svg" class="me-2">
+                            <p class="m-0"> Share on Facebook </p>
+                        </button>
+                        <hr class="m-0">
+                        <button mat-menu-item class="d-flex align-items-center p-0">
+                            <img src="assets/icons/twitter.svg" class="me-2">
+                            <p class="m-0"> Share to Twitter </p>
+                        </button>
+                    </mat-menu>
+                </div>
+                <h2>
+                    {{ item?.name }}
+                </h2>
+                <div class="d-flex align-items-center">
+                    <img src="assets/imgs/user-blank.jpg" class="userAvatar me-2">
+                    <div>
+                        <h5 class="mb-1"> Creator </h5>
+                        <h5 class="m-0 fw-bold"> {{ item?.authorName }} </h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Only show desktop and tablet -->
+            <div class="row d-none d-sm-flex">
+                <div class="my-4 py-3">
+                    <h5 class="m-0 mb-1">
+                        Current price
+                    </h5>
+                    <div class="d-flex align-items-center">
+                        <img src="assets/icons/neo-gas.svg" class="me-3 icon">
+                        <h2 class="m-0 fw-bold me-3"> {{ item?.price?.price }} </h2>
+                        <!-- <h3 class="m-0"> $550 </h3> -->
+                    </div>
+                </div>
+                <div>
+                    <button mat-raised-button color="primary" class="buy checkout-btn" (click)="openCheckout()">
+                        Buy Now
+                    </button>
+
+                    <button mat-raised-button color="primary" class="buy" (click)="openPhisicalDeliveryCommingSoon()">
+                        Physical Delivery
+                    </button>
+                </div>
+            </div>
+
+            <hr class="my-3 my-sm-4 my-lg-5">
+
+            <div class="row">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <div>
+                        <h5 class="m-0"> Collection </h5>
+                        <h5 class="fw-bold"> {{ item?.type }} </h5>
+                    </div>
+                    <button mat-raised-button class="collection"(click)="openCollection()">
+                        <h5 class="m-0 fw-bold">
+                            Go to collection
+                        </h5>
+                    </button>
+                </div>
+
+                <div class="history">
+                    <mat-accordion>
+                        <button mat-raised-button (click)="panelOpenState = !panelOpenState"  class="historyBtn">
+                            <h5 class="m-0 me-3"> History </h5>
+                            <mat-icon> {{ panelOpenState ? "expand_less" : "expand_more" }} </mat-icon>
+                        </button>
+                        <mat-expansion-panel [expanded]="panelOpenState">
+                            <div class="content">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="assets/imgs/user-blank.jpg" class="userAvatar me-2">
+                                    <div>
+                                        <h5 class="m-0 mb-1"> 24 hours ago </h5>
+                                        <h5 class="m-0 fw-bold"> Bought by Ownername for NEO GAS 0,8 </h5>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="assets/imgs/user-blank.jpg" class="userAvatar me-2">
+                                    <div>
+                                        <h5 class="m-0 mb-1"> 3 days ago </h5>
+                                        <h5 class="m-0 fw-bold"> Bought by Anothername for NEO GAS 0,6 </h5>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="assets/imgs/user-blank.jpg" class="userAvatar me-2">
+                                    <div>
+                                        <h5 class="m-0 mb-1"> 24 march 2021 </h5>
+                                        <h5 class="m-0 fw-bold"> Created by Creatorname start price NEO GAS 0,5678 </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

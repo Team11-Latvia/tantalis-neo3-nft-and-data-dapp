@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="close">
+        <mat-icon (click)="close()">close</mat-icon>
+    </div>
+
+    <div class="py-0 py-sm-3 mt-3 mt-sm-0">
+        <h3 class="text-center">{{ dialogData.title }}</h3>
+
+        <h5 class="m-0" *ngIf="dialogData.content.length > 0">
+            <div *ngFor="let item of dialogData.content">
+                <ng-container *ngIf="item.type === 'TEXT'">
+                    <p>{{ item.data }}</p>
+                </ng-container>
+                
+                <ng-container *ngIf="item.type === 'IMAGE'">
+                    <div class="text-center p-bot-10">
+                        <img [src]="item.data">
+                    </div>
+                </ng-container>
+            </div>
+        </h5>
+    </div>
+</div>

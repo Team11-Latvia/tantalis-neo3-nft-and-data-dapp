@@ -1,0 +1,75 @@
+.container-fluid {
+    .header {
+        img.avatar {
+            width: 120px;
+            height: 120px;
+        }
+        .localIcon {
+            width: 16px;
+            height: 16px;
+        }
+    }
+    .content {
+        .buttons {
+            max-width: 100vw;
+            padding-right: 16px;
+            overflow-x: auto;
+            padding-bottom: 12px;
+            button.field {
+                background-color: #E0E6ED;
+                height: 34px;
+                padding: 0 16px;
+                color: black;
+            }
+            button.field.active {
+                background-color: #8470DA;
+                color: white;
+            }
+        }
+        button.add {
+            height: 48px;
+            padding: 0 42px;
+            background-color: #8470DA;
+        }
+        .card {
+            border-radius: 8px;
+            cursor: pointer;
+            img.cardImg {
+                border-radius: 8px 8px 0 0;
+            }
+            .detail {
+                background-color: #EEF2F7;
+                border-radius: 0 0 8px 8px;
+                h4 {
+                    font-size: 16px !important;
+                    font-weight: 600 !important;
+                }
+                span {
+                    font-size: 12px !important;
+                    font-weight: 400 !important;
+                    color: #5F6E80;
+                }
+                h3 {
+                    font-size: 16px !important;
+                    font-weight: 400 !important;
+                }
+                p {
+                    font-size: 12px !important;
+                    font-weight: 400 !important;
+                }
+            }
+            .favorite {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                mat-icon {
+                    background: white;
+                    border-radius: 50%;
+                    width: 32px;
+                    height: 32px;
+                    color: #8470DA;
+                }
+            }
+        }
+    }
+}
